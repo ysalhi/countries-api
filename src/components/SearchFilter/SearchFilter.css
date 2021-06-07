@@ -1,0 +1,8 @@
+.searchFilterZone {
+    display: flex;
+    width: 100%;
+}
+
+.searchBox-light {
+    background-color: white;
+}

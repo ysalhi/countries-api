@@ -1,23 +1,23 @@
-import logo from './logo.svg';
+import Header from './components/Header/Header';
+import MainContainer from './components/MainContainer/MainContainer';
+import SearchFilter from './components/SearchFilter/SearchFilter';
+import CountryList from './components/CountryList/CountryList';
+import React from 'react';
 import './App.css';
 
 function App() {
+  const [darkMode, setDarkMode] = React.useState(false);
+  function changeDisplayMode(isDarkMode) {
+    setDarkMode(isDarkMode);
+  }
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header displayMode={darkMode} switchMode={changeDisplayMode}/>
+      <MainContainer displayMode={darkMode}>
+        <SearchFilter displayMode={darkMode}/>
+        <CountryList displayMode={darkMode}/>
+      </MainContainer>
     </div>
   );
 }

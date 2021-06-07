@@ -1,0 +1,15 @@
+.countryList {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.countryTile {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+}
+
+.countryFlag {
+    width: 100%;
+}
