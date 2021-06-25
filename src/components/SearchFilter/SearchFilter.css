@@ -5,4 +5,69 @@
 
 .searchBox-light {
     background-color: white;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    color: hsl(0, 0%, 52%);
+    box-shadow: 5px 5px 6px 1px #c3c3c390;
+}
+
+.searchBox-dark {
+    background-color: #2b3945;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    color: white;
+    box-shadow: 5px 5px 6px 1px rgba(21, 21, 21, 0.257);
+}
+
+.searchField-light {
+    background-color: white;
+    margin-left: 1rem;
+    width: 400px;
+    border: 0;
+    font-size: 0.8rem;
+    
+}
+
+.searchField-dark {
+    background-color: #2b3945;
+    margin-left: 1rem;
+    width: 400px;
+    border: 0;
+    color: white;
+    font-size: 0.8rem;
+}
+
+.searchField-light:focus {
+    outline-width: 0;
+}
+
+.searchField-dark:focus {
+    outline-width: 0;
+}
+
+.filterDropdown-light {
+    background-color: white;
+    box-shadow: 5px 5px 6px 1px #c3c3c390;
+    border-radius: 8px;
+    margin-left: auto;
+    padding: 0.5rem 1rem 0.5rem 1.5rem;
+    display: flex;
+    align-items: center;
+    font-size: 0.85rem;
+}
+
+.filterDropdown-dark {
+    background-color: #2b3945;
+    box-shadow: 5px 5px 6px 1px rgba(21, 21, 21, 0.257);
+    border-radius: 8px;
+    margin-left: auto;
+    padding: 0.5rem 1rem 0.5rem 1.5rem;
+    display: flex;
+    align-items: center;
+    font-size: 0.85rem;
+}
+
+.dropdown-icon {
+    cursor: pointer;
+    margin-left: 3rem;
 }

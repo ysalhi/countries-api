@@ -1,19 +1,21 @@
 .mainContainer-light {
-    width: 100%;
+    width: calc(100% - 10rem);
     display:flex;
     flex-direction : column;
-    padding: 2rem 3rem;
+    padding: 3rem 5rem;
     background-color: hsl(0, 0%, 98%);
     color: black;
     overflow: hidden;
+    min-height: 92vh;
 }
 
 .mainContainer-dark {
-    width: 100%;
+    width: calc(100% - 10rem);
     display:flex;
     flex-direction : column;
-    padding: 2rem 3rem;
+    padding: 3rem 5rem;
     background-color: hsl(207, 26%, 17%);
     color: white;
     overflow: hidden;
+    min-height: 92vh;
 }

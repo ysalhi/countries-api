@@ -1,0 +1,121 @@
+.backButton-light {
+    background-color: white;
+    box-shadow: 1px 1px 6px 1px #a2a2a290;
+    width: 80px;
+    border-radius: 6px;
+    margin-top: 2rem;
+    padding: 0.5rem 2rem;
+    display: flex;
+    align-items: center;
+}
+
+.backButton-dark {
+    background-color: #2b3945;
+    box-shadow: 1px 1px 6px 1px rgba(0, 0, 0, 0.579);
+    width: 80px;
+    border-radius: 6px;
+    margin-top: 2rem;
+    padding: 0.5rem 2rem;
+    display: flex;
+    align-items: center;
+}
+
+.noStyle {
+    text-decoration: none;
+    color:inherit;
+}
+
+.backButtonText {
+    padding-left: 0.8rem;
+}
+
+.detailLayout {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding-top: 4rem;
+}
+
+.countryFlagDetail {
+    width: 45%;
+    padding-right: 5rem;
+}
+
+.flagDetailImg {
+    min-width: 100%;
+    max-width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.countryDetailsList {
+    width: 50%;
+    text-align: left;
+    margin-left: 5rem;
+    align-self: center;
+}
+
+.detailsCountryName {
+    font-size: 2rem;
+    font-weight: 800;
+    padding-bottom: 1.2rem;
+}
+
+.detailsPanels {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.detailsLeftPanel {
+    width: 50%;
+}
+
+.detailsRightPanel {
+    width: 50%;
+}
+
+.detailsPanelItem {
+    display: block;
+    padding-bottom: 0.5rem;
+}
+
+.detailsPanelTitle {
+    font-weight: 800;
+    display:inline;
+}
+
+.detailsBordersDiv {
+    display: flex;
+    width: 100%;
+    padding-top: 4rem;
+    align-items: center;
+}
+
+.borderCountries {
+    margin-right: 1rem;
+}
+
+.borderButton-light {
+    display: inline;
+    background-color: white;
+    box-shadow: 1px 1px 6px 1px #dbdbdb90;
+    width: 100px;
+    border-radius: 6px;
+    margin-left: 0.3rem;
+    padding: 0.2rem 0;
+    text-align: center;
+    font-size: 0.85rem;
+}
+
+.borderButton-dark {
+    display: inline;
+    background-color: #2b3945;
+    box-shadow: 1px 1px 6px 1px rgba(76, 75, 75, 0.579);
+    width: 100px;
+    border-radius: 6px;
+    margin-left: 0.3rem;
+    padding: 0.2rem 0;
+    text-align: center;
+    font-size: 0.85rem;
+}
