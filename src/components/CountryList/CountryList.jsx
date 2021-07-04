@@ -5,7 +5,7 @@ function CountryList(props) {
     return (
         <div className="countryList">
             {props.countryData.map((country, index) => (
-                <Link to={`/${index}`} className="noStyle">
+                <Link to={`/${index}`} className="noStyle" key={index}>
                 <div className={props.displayMode ? "countryTile-dark" : "countryTile-light"}>
                     <div className="countryFlag">
                         <img className="flagImg" src={country.flag} />
