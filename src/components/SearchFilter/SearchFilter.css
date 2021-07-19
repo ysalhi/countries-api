@@ -103,6 +103,12 @@
 }
 
 .countryFilter {
-    margin-left: 1rem;
+    margin-left: 2rem;
     margin-bottom: 0.3rem;
+    cursor: pointer;
+}
+
+.checkIcon {
+    margin-left: -1.3rem;
+    margin-right: 0.3rem;
 }

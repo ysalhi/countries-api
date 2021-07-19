@@ -1,12 +1,18 @@
 import './SearchFilter.css';
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch, faAngleDown } from '@fortawesome/free-solid-svg-icons';
+import { faSearch, faAngleDown, faCheck } from '@fortawesome/free-solid-svg-icons';
 
 function SearchFilter(props) {
     const [isOpen, setIsOpen] = useState(false);
 
-
+    function filterRegion(region) {
+        if (props.filter == region) {
+            props.unfilter();
+        } else {
+        props.filterByRegion(region);
+        }
+    }
 
     return (
         <div className="searchFilterZone">
@@ -18,11 +24,11 @@ function SearchFilter(props) {
                 Filter by Region
                 <FontAwesomeIcon icon={faAngleDown} className="dropdown-icon"/>
                 {isOpen ? <div className={props.displayMode ? "dropdownList-dark" : "dropdownList-light"}>
-                    <div className="countryFilter">Africa</div>
-                    <div className="countryFilter">America</div>
-                    <div className="countryFilter">Asia</div>
-                    <div className="countryFilter">Europe</div>
-                    <div className="countryFilter">Oceania</div>
+                    <div className="countryFilter" onClick={() => filterRegion("Africa")}>{(props.filter=="Africa") ? <FontAwesomeIcon icon={faCheck} className="checkIcon" /> : "" }Africa</div>
+                    <div className="countryFilter" onClick={() => filterRegion("Americas")}>{(props.filter=="Americas") ? <FontAwesomeIcon icon={faCheck} className="checkIcon"/> : "" }America</div>
+                    <div className="countryFilter" onClick={() => filterRegion("Asia")}>{(props.filter=="Asia") ? <FontAwesomeIcon icon={faCheck} className="checkIcon"/> : "" }Asia</div>
+                    <div className="countryFilter" onClick={() => filterRegion("Europe")}>{(props.filter=="Europe") ? <FontAwesomeIcon icon={faCheck} className="checkIcon"/> : "" }Europe</div>
+                    <div className="countryFilter" onClick={() => filterRegion("Oceania")}>{(props.filter=="Oceania") ? <FontAwesomeIcon icon={faCheck} className="checkIcon"/> : "" }Oceania</div>
                 </div> : <></>}
             </div>
         </div>

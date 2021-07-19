@@ -2,17 +2,28 @@ import './CountryDetails.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { useParams, Link } from 'react-router-dom';
+import React from 'react';
 
 function CountryDetails(props) {
-    let { countryId } = useParams();
+    let { alphaCode } = useParams();
+    var countryId = getCountryIdByAlphaCode(alphaCode);
 
-    function getCountryNameByAlphaCode(alphaCode) {
-        for(let i=0; i<=props.countryData.length; i++) {
-            if (props.countryData[i].alpha3Code===alphaCode) {
+    function getCountryNameByAlphaCode(alpha) {
+        for(let i=0; i<props.countryData.length; i++) {
+            if (props.countryData[i].alpha3Code===alpha) {
                 return props.countryData[i].name;
             }
         }
     }
+
+    function getCountryIdByAlphaCode(alpha) {
+        for(let i=0; i<props.countryData.length; i++) {
+            if (props.countryData[i].alpha3Code==alpha) {
+                return i;
+            }
+        }
+    }
+
 
     return (
         <div>

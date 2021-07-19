@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 function CountryList(props) {
     return (
         <div className="countryList">
-            {props.countryData.map((country, index) => (
-                <Link to={`/${index}`} className="noStyle" key={index}>
+            {props.filteredData.map((country, index) => (
+                <Link to={`/${country.alpha3Code}`} className="noStyle" key={index}>
                 <div className={props.displayMode ? "countryTile-dark" : "countryTile-light"}>
                     <div className="countryFlag">
                         <img className="flagImg" src={country.flag} />
