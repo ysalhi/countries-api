@@ -5,6 +5,7 @@ import { faSearch, faAngleDown, faCheck } from '@fortawesome/free-solid-svg-icon
 
 function SearchFilter(props) {
     const [isOpen, setIsOpen] = useState(false);
+    const [searchValue, setSearchValue] = useState('');
 
     function filterRegion(region) {
         if (props.filter == region) {
@@ -14,11 +15,17 @@ function SearchFilter(props) {
         }
     }
 
+    function handleChange(event) {
+        console.log("handle change fired")
+        props.searchByName(event.target.value);
+        setSearchValue(event.target.value);
+    }
+
     return (
         <div className="searchFilterZone">
             <div className={props.displayMode ? "searchBox-dark" : "searchBox-light"}>
                 <FontAwesomeIcon icon={faSearch} />
-                <input type="text" className={props.displayMode ? "searchField-dark" : "searchField-light"} placeholder="Search for a country..."/>
+                <input type="text" value={searchValue} onChange={handleChange} className={props.displayMode ? "searchField-dark" : "searchField-light"} placeholder="Search for a country..."/>
             </div>
             <div className={props.displayMode ? "filterDropdown-dark" : "filterDropdown-light"} onClick={isOpen ? () => setIsOpen(false) : () => setIsOpen(true)}>
                 Filter by Region

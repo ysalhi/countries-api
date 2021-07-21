@@ -7,7 +7,7 @@ import React from 'react';
 function CountryDetails(props) {
     let { alphaCode } = useParams();
     var countryId = getCountryIdByAlphaCode(alphaCode);
-
+    
     function getCountryNameByAlphaCode(alpha) {
         for(let i=0; i<props.countryData.length; i++) {
             if (props.countryData[i].alpha3Code===alpha) {

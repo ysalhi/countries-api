@@ -14,15 +14,33 @@ function App() {
   const [darkMode, setDarkMode] = React.useState(false);
   const [countryData, setCountryData] = React.useState([]);
   const [filteredData, setFilteredData] = React.useState([]);
-  const [filter, setFilter] = React.useState();
+  const [filter, setFilter] = React.useState('');
+  
   function changeDisplayMode(isDarkMode) {
     setDarkMode(isDarkMode);
   }
 
+  function searchByName(name) {
+    var searchedArray;
+    if (filter === '' && name === '') {
+      setFilteredData(countryData);
+    } else if (filter === '' && name !== '') {
+      searchedArray = countryData.filter(country => country.name.includes(name));
+      setFilteredData(searchedArray);
+    } else if (filter !== '' && name === '') {
+      filterByRegion(filter);
+    } else if (filter !== '' && name !== '') {
+      filterByRegion(filter);
+      setFilteredData(currentValue => currentValue.filter(country => country.name.includes(name)));
+    }
+  }
+
+
   function filterByRegion(region) {
-    const filteredArray = countryData.filter(country => country.region == region);
+    let filteredArray = countryData.filter(country => country.region == region);
     setFilteredData(filteredArray);
     setFilter(region);
+    console.log(filteredData);
   }
 
   function unfilter() {
@@ -47,7 +65,7 @@ function App() {
               <CountryDetails countryData={countryData} displayMode={darkMode}/>
             </Route>
             <Route exact path="/">
-              <SearchFilter displayMode={darkMode} filterByRegion={filterByRegion} unfilter={unfilter} filter={filter}/>
+              <SearchFilter displayMode={darkMode} filterByRegion={filterByRegion} unfilter={unfilter} filter={filter} searchByName={searchByName}/>
               <CountryList countryData={countryData} filteredData={filteredData} displayMode={darkMode} />
             </Route>
           </Switch>
