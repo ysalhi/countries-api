@@ -88,7 +88,9 @@ function CountryDetails(props) {
                     <div className="detailsBordersDiv">
                         <div className="detailsPanelTitle borderCountries">Border Countries: </div>
                         {props.countryData[countryId].borders.map((border) => (
-                            <div className={props.displayMode ? "borderButton-dark" : "borderButton-light"}>{getCountryNameByAlphaCode(border)}</div>
+                            
+                            <div className={props.displayMode ? "borderButton-dark" : "borderButton-light"}><Link className="noStyle" to={`/${border}`}>{getCountryNameByAlphaCode(border)}</Link> </div>
+                            
                         ))}
                     </div>
                 </div>
