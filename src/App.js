@@ -73,12 +73,4 @@ function App() {
   );
 }
 
-/*<Routes>
-            <Route path="/:alphaCode" element={<CountryDetails countryData={countryData} displayMode={darkMode}/>} />
-            <Route exact path="/">
-              <SearchFilter displayMode={darkMode} filterByRegion={filterByRegion} unfilter={unfilter} filter={filter} searchByName={searchByName}/>
-              <CountryList countryData={countryData} filteredData={filteredData} displayMode={darkMode} />
-            </Route>
-*/
-
 export default App;
