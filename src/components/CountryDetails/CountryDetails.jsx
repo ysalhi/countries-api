@@ -18,7 +18,7 @@ function CountryDetails(props) {
 
     function getCountryIdByAlphaCode(alpha) {
         for(let i=0; i<props.countryData.length; i++) {
-            if (props.countryData[i].alpha3Code==alpha) {
+            if (props.countryData[i].alpha3Code===alpha) {
                 return i;
             }
         }
@@ -87,7 +87,7 @@ function CountryDetails(props) {
                     </div>
                     <div className="detailsBordersDiv">
                         <div className="detailsPanelTitle borderCountries">Border Countries: </div>
-                        {props.countryData[countryId].borders.map((border) => (
+                        {props.countryData[countryId].borders != null && props.countryData[countryId].borders.map((border) => (
                             
                             <div className={props.displayMode ? "borderButton-dark" : "borderButton-light"}><Link className="noStyle" to={`/${border}`}>{getCountryNameByAlphaCode(border)}</Link> </div>
                             
